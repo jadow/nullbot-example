@@ -1,0 +1,25 @@
+{
+  "name": "nullbot-example",
+  "version": "0.0.1",
+  "description": "An complete nullbot example for use with heroku.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/baetheus/nullbot-example"
+  },
+  "keywords": [
+    "Telegram",
+    "bot",
+    "nullbot",
+    "example"
+  ],
+  "author": "Brandon Blaylock",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "nullbot": "^1.1.3"
+  }
+}
