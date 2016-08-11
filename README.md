@@ -1,6 +1,8 @@
 # nullbot-example
 This repository is a working heroku app that can be interfaced with [here](https://telegram.me/nullbotexamplebot). It only responds to ```hello``` and ```cat```. It's meant to be the fastest way to bootstrap the [nullbot](https://github.com/baetheus/nullbot) Telegram bot framework, or really any bot.
 
+In other words, if you want to build a Telegram bot *right now*, follow these instructions.
+
 ## Getting started
 This process shouldn't take more than 10 minutes.
 
