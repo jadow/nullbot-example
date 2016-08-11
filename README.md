@@ -14,13 +14,13 @@ This process shouldn't take more than 10 minutes.
 
 4. Jump over to the Heroku ```Settings``` for your bot and click ```Reveal Config Vars``` and add the following:
 
-| Key | Value |
-| --- | --- |
-| BOTNAME | The name of your bot, can be anything. |
-| TOKEN | The bot token supplied by [@BotFather](https://telegram.me/BotFather) |
-| URL | The url of your heroku app, right click on the ```Open app``` button and copy link to get this. Remove the trailing ```/``` |
+    | Key | Value |
+    | --- | --- |
+    | BOTNAME | The name of your bot, can be anything. |
+    | TOKEN | The bot token supplied by [@BotFather](https://telegram.me/BotFather) |
+    | URL | The url of your heroku app, right click on the ```Open app``` button and copy link to get this. Remove the trailing ```/``` |
 
-*Be sure to click ```Add``` after each key value pair.*
+    *Be sure to click ```Add``` after each key value pair.*
 
 5. Jump back over to ```Deploy```, scroll to the bottom, and click the ```Deploy Branch``` button.
 
