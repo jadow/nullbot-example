@@ -12,7 +12,7 @@ This process shouldn't take more than 10 minutes.
 
 3. Create a [Heroku](https://www.heroku.com) account.
 
-3. Create a new app on Heroku, select deploy via Github, and connect to your forked nullbot-example repository. Be sure to enable automatic deploys.
+3. Create a new app on Heroku, select deployment method ```GitHub```, and ```Connect``` to your forked nullbot-example repository. Be sure to ```Enable Automatic Deploys```.
 
 4. Jump over to the Heroku ```Settings``` for your bot and click ```Reveal Config Vars``` and add the following:
 
