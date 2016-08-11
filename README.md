@@ -27,7 +27,7 @@ This process shouldn't take more than 10 minutes.
 6. All done! Go ahead and message your bot.
 
 ## Ok, great, what's next?
-From here, you can clone your bot to your local machine and start making changes. If you enabled automatic deploys, the heroku app will update and relaunch every time you push to the master branch.
+From here, you can clone your forked nullbot-example repository to your local machine and start making changes. If you enabled automatic deploys, the heroku app will update and relaunch every time you push to the master branch. It's super easy.
 
 For more information on how to use nullbot [go here](https://github.com/baetheus/nullbot).
 
