@@ -19,6 +19,12 @@ function World(req, res, next) {
     next();
 }
 
+
+function Google(req, res, next) {
+	res.sendMessage(req);
+    next();
+}
+
 function Cleanup(req, res, next) {
 	if (!res.finished) {
         res.writeHead(200);
@@ -28,5 +34,6 @@ function Cleanup(req, res, next) {
 }
 
 bot.filter(/^hello$/).use(World);
+bot.filter(/^google/).use(World);
 bot.filter('finalHandler').use(lastMessage).use(Cleanup);
 bot.listen();
