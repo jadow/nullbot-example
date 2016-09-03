@@ -9,6 +9,11 @@ var options = {
 
 var bot = require('nullbot')(options);
 
+function sayHelloWorld(req, res, next) {
+	res.sendMessage('i am alive');
+    next();
+}
+bot.use(sayHelloWorld);
 // Filter for text that matches 'hello' and respond with 'world'
 bot.filter(/^hello$/).use(function (req, res, next) {
     res.sendMessage('world');
@@ -21,14 +26,6 @@ bot.filter(/^hello$/).use(function (req, res, next) {
 //bot.filter({name: 'cat', regex: /^cat$/}).use(function (req, res, next) {
 //    res.sendPhoto('./cat.jpg', next);
 //});
-
-bot.sendMessage({chat_id: <CHATID>, text: 'Hello!'},
-    function (err, body) {
-        if (err) { bot.log.error(err); }
-        if (!body.ok) { bot.log.error(body); }
-    }
-);
-
 
 // Make sure to close unhandled requests.
 bot.filter('finalHandler').use(function (req, res, next) {
