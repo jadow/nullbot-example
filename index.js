@@ -9,17 +9,20 @@ var options = {
 
 var bot = require('nullbot')(options);
 
-function middlewareOne(req, res, next) {
-    console.log('I am middleware one');
+function sayHelloWorld(req, res, next) {
+	res.sendMessage('I am Alive!');
     next();
 }
 
-function middlewareTwo(req, res, next) {
-    console.log('I am middleware two');
+bot.filter(/^hello$/).use(function (req, res, next) {
+    res.sendMessage('world');
     next();
-}
+});
 
-bot.use(middlewareOne).use(middlewareTwo);
+bot.filter(/^google$/).use(function (req, res, next) {
+    res.sendMessage('https://www.google.com.sg/#q=something+for+me');
+    next();
+});
 
 // Make sure to close unhandled requests.
 bot.filter('finalHandler').use(function (req, res, next) {
@@ -27,7 +30,6 @@ bot.filter('finalHandler').use(function (req, res, next) {
         res.writeHead(200);
         res.end();
     }
-	bot.use(sayHelloWorld);
     next();
 });
 
