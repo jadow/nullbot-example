@@ -9,27 +9,17 @@ var options = {
 
 var bot = require('nullbot')(options);
 
-function sayHelloWorld(req, res, next) {
-	res.sendMessage('I am Alive!');
+function middlewareOne(req, res, next) {
+    console.log('I am middleware one');
     next();
 }
 
-
-bot.events.on('text', function (req) {
-    console.log('hey');
-    var msg = {chat_id: req[req.type].chat.id, text: 'I saw that!'};
-    bot.sendMessage(msg, logErr);
-});
-
-bot.filter(/^hello$/).use(function (req, res, next) {
-    res.sendMessage('world');
+function middlewareTwo(req, res, next) {
+    console.log('I am middleware two');
     next();
-});
+}
 
-bot.filter(/^google$/).use(function (req, res, next) {
-    res.sendMessage('https://www.google.com.sg/#q=something+for+me');
-    next();
-});
+bot.use(middlewareOne).use(middlewareTwo);
 
 // Make sure to close unhandled requests.
 bot.filter('finalHandler').use(function (req, res, next) {
