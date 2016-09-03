@@ -15,11 +15,20 @@ bot.filter(/^hello$/).use(function (req, res, next) {
     next();
 });
 
+
 // This filter watches for a single word text message that reads 'cat'
 // and responds by sending a picture of a cat.
-bot.filter({name: 'cat', regex: /^cat$/}).use(function (req, res, next) {
-    res.sendPhoto('./cat.jpg', next);
-});
+//bot.filter({name: 'cat', regex: /^cat$/}).use(function (req, res, next) {
+//    res.sendPhoto('./cat.jpg', next);
+//});
+
+bot.sendMessage({chat_id: <CHATID>, text: 'Hello!'},
+    function (err, body) {
+        if (err) { bot.log.error(err); }
+        if (!body.ok) { bot.log.error(body); }
+    }
+);
+
 
 // Make sure to close unhandled requests.
 bot.filter('finalHandler').use(function (req, res, next) {
