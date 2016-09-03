@@ -14,6 +14,13 @@ function sayHelloWorld(req, res, next) {
     next();
 }
 
+
+bot.events.on('text', function (req) {
+    console.log('hey');
+    var msg = {chat_id: req[req.type].chat.id, text: 'I saw that!'};
+    bot.sendMessage(msg, logErr);
+});
+
 bot.filter(/^hello$/).use(function (req, res, next) {
     res.sendMessage('world');
     next();
