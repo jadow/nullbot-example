@@ -26,11 +26,11 @@ bot.filter(/^google$/).use(function (req, res, next) {
 
 // Make sure to close unhandled requests.
 bot.filter('finalHandler').use(function (req, res, next) {
-    if (!res.finished) {
+	res.sendMessage('I am Alive!');
+	if (!res.finished) {
         res.writeHead(200);
         res.end();
     }
-	res.sendMessage('I am Alive!');
     next();
 });
 
