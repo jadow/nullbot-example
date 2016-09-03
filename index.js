@@ -20,17 +20,10 @@ bot.filter(/^hello$/).use(function (req, res, next) {
     next();
 });
 
-//https://www.google.com.sg/#q=something for me
 bot.filter(/^google$/).use(function (req, res, next) {
-    res.sendMessage('https://www.google.com.sg/#q=something for me');
+    res.sendMessage('https://www.google.com.sg/#q=something+for+me');
     next();
 });
-
-// This filter watches for a single word text message that reads 'cat'
-// and responds by sending a picture of a cat.
-//bot.filter({name: 'cat', regex: /^cat$/}).use(function (req, res, next) {
-//    res.sendPhoto('./cat.jpg', next);
-//});
 
 // Make sure to close unhandled requests.
 bot.filter('finalHandler').use(function (req, res, next) {
