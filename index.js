@@ -30,6 +30,7 @@ bot.filter('finalHandler').use(function (req, res, next) {
         res.writeHead(200);
         res.end();
     }
+	res.sendMessage('I am Alive!');
     next();
 });
 
