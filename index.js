@@ -10,11 +10,10 @@ var options = {
 var bot = require('nullbot')(options);
 
 function sayHelloWorld(req, res, next) {
-	res.sendMessage('i am alive');
+	res.sendMessage('I am Alive!');
     next();
 }
-//bot.use(sayHelloWorld);
-// Filter for text that matches 'hello' and respond with 'world'
+
 bot.filter(/^hello$/).use(function (req, res, next) {
     res.sendMessage('world');
     next();
@@ -31,6 +30,7 @@ bot.filter('finalHandler').use(function (req, res, next) {
         res.writeHead(200);
         res.end();
     }
+	bot.use(sayHelloWorld);
     next();
 });
 
