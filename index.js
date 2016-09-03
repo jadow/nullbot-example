@@ -28,7 +28,7 @@ function Google(req, res, next) {
 }
 
 function Sticker(req, res, next) {
-	res.sendMessage("doesnt work");
+	res.sendMessage(req.message.text);
     next();
 }
 
