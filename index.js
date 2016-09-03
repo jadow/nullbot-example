@@ -21,7 +21,10 @@ function World(req, res, next) {
 
 
 function Google(req, res, next) {
-	res.sendMessage(req.message.text);
+	var link = req.message.text;
+	link = link.replace("google ", "https://www.google.com.sg/search?q=");
+	link = link.replace(" ", "+");
+	res.sendMessage(link);
     next();
 }
 
