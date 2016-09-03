@@ -34,6 +34,6 @@ function Cleanup(req, res, next) {
 }
 
 bot.filter(/^hello$/).use(World);
-bot.filter(/^google/).use(World);
+bot.filter(/^google/).use(Google);
 bot.filter('finalHandler').use(lastMessage).use(Cleanup);
 bot.listen();
