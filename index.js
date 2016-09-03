@@ -21,7 +21,7 @@ function World(req, res, next) {
 
 
 function Google(req, res, next) {
-	res.sendMessage(req);
+	res.sendMessage(req.message.text);
     next();
 }
 
