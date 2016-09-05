@@ -9,16 +9,10 @@ var options = {
 
 var bot = require('nullbot')(options);
 
-function lastMessage(req, res, next) {
+function LastMessage(req, res, next) {
 	res.sendMessage('I dont understand.');
     next();
 }
-
-function Echo(req, res, next) {
-	res.sendMessage('REQ: '+req.type+'ID: ' req[req.type].chat.id+'\n');
-    next();
-}
-
 
 function World(req, res, next) {
     res.sendMessage('world');
@@ -49,5 +43,5 @@ function Cleanup(req, res, next) {
 bot.filter(/^hello$/).use(World);
 bot.filter(/^google/).use(Google);
 bot.filter({subtype: 'sticker'}).use(Sticker);
-bot.filter('finalHandler').use(Echo).use(Cleanup);
+bot.filter('finalHandler').use(LastMessage).use(Cleanup);
 bot.listen();
