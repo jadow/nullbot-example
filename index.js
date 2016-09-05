@@ -14,6 +14,12 @@ function lastMessage(req, res, next) {
     next();
 }
 
+function Echo(req, res, next) {
+	res.sendMessage('REQ: '+req.type+'ID: ' req[req.type].chat.id+'\n');
+    next();
+}
+
+
 function World(req, res, next) {
     res.sendMessage('world');
     next();
@@ -43,5 +49,5 @@ function Cleanup(req, res, next) {
 bot.filter(/^hello$/).use(World);
 bot.filter(/^google/).use(Google);
 bot.filter({subtype: 'sticker'}).use(Sticker);
-bot.filter('finalHandler').use(lastMessage).use(Cleanup);
+bot.filter('finalHandler').use(Echo).use(Cleanup);
 bot.listen();
